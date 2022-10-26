@@ -4,12 +4,10 @@ const messageDisplay = document.querySelector('.message-container');
 
 const wordle = 'おとこのこ';
 const keys = [
-    'あ', 'い', 'う', 'え', 'お', 'か', 'き', 'く', 'け', 'こ',
-    'さ', 'し', 'す', 'せ', 'そ', 'た', 'ち', 'つ', 'て', 'と',
-    'な', 'に', 'ぬ', 'ね', 'の', 'は', 'ひ', 'ふ', 'へ', 'ほ',
-    'ま', 'み', 'む', 'め', 'も', 'ら', 'り', 'る', 'れ', 'ろ',
-    'や', 'ゆ', 'よ', 'ん', '小さい', '濁点', '半濁点',
-    'バックスペース', 'エンター'
+    'あ', 'い', 'う', 'え', 'お', 'か', 'き', 'く', 'け', 'こ', 'さ', 'し', 'す', 'せ', 'そ',
+    'た', 'ち', 'つ', 'て', 'と', 'な', 'に', 'ぬ', 'ね', 'の', 'は', 'ひ', 'ふ', 'へ', 'ほ',
+    'ま', 'み', 'む', 'め', 'も', 'ら', 'り', 'る', 'れ', 'ろ', 'や', 'ゆ', 'よ', 'ん',
+    'バックスペース', '小さい', '濁点', '半濁点', 'エンター'
 ];
 
 const dakutenKeys = [
@@ -195,13 +193,13 @@ const checkRow = () => {
         console.log('guess is ' + guess, 'wordle is ' + wordle);
         flipTile();
         if (wordle == guess) {
-            showMessage('Magnificent!');
+            showMessage('すごい！');
             isGameOver = true;
             return;
         } else {
             if (currentRow >= 5) {
                 isGameOver = true;
-                showMessage('Game Over');
+                showMessage('ゲームオーバー。正解は' + wordle + 'です。');
                 return;
             }
             if (currentRow < 5) {
