@@ -199,7 +199,7 @@ const checkRow = () => {
         } else {
             if (currentRow >= 5) {
                 isGameOver = true;
-                showMessage('ゲームオーバー。正解は' + wordle + 'です。');
+                showMessage('ゲームオーバー。正解は「' + wordle + '」です。');
                 return;
             }
             if (currentRow < 5) {
@@ -214,7 +214,7 @@ const showMessage = (message) => {
     const messageElement = document.createElement('p');
     messageElement.textContent = message;
     messageDisplay.append(messageElement);
-    setTimeout(() => messageDisplay.removeChild(messageElement), 2000);
+    setTimeout(() => messageDisplay.removeChild(messageElement), 20000);
 }
 
 const addColorToKey = (keyKana, color) => {
